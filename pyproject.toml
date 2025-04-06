@@ -1,0 +1,21 @@
+[project]
+name = "sprintcore"
+version = "0.1.0"
+description = "SprintCore CLI: Convert PRDs into structured sprints"
+authors = [{ name = "Nishant Asthana", email = "nishant@sprintcore.ai" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+  "openai",
+  "python-dotenv",
+  "pyyaml",
+  "requests"
+]
+
+[project.scripts]
+sprintcore = "sprintcore.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

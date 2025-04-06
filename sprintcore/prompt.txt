@@ -1,0 +1,28 @@
+You are a senior product manager. Convert the following product requirement document (PRD) into a structured sprint plan with:
+
+- Epics
+- Stories under each epic
+- Subtasks under each story
+- Acceptance criteria (optional)
+
+Respond in JSON format like:
+
+[
+  {
+    "epic_name": "...",
+    "description": "...",
+    "stories": [
+      {
+        "story_name": "...",
+        "acceptance_criteria": "...",
+        "subtasks": ["...", "..."]
+      }
+    ]
+  }
+]
+
+---
+
+PRD:
+
+{{REQUIREMENTS}}

@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+
+# OS and editor files
+.DS_Store
+*.swp
+*~
+
+# Test output and coverage
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+
+# Output files
+*.log
+*.out
+*.tmp
+*.zip
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+sprintcore.egg-info/
+*.yaml
+*.md
+*.json
