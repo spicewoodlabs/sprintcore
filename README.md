@@ -43,13 +43,13 @@ pip install -e .
 ### Basic
 
 ```bash
-sprintcore prd2story --input path/to/prd.md --output sprint.yaml
+sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt
 ```
 
 ### With Mock Mode
 
 ```bash
-sprintcore prd2story --input path/to/prd.md --output mock.json --mock
+sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt --mock
 ```
 
 ---
@@ -60,10 +60,6 @@ Create a `.env` file in the repo root:
 
 ```env
 OPENAI_API_KEY=sk-...
-JIRA_URL=https://yourcompany.atlassian.net
-JIRA_USER=you@example.com
-JIRA_TOKEN=your_token
-JIRA_PROJECT=ENG
 ```
 
 ---
@@ -79,13 +75,20 @@ pytest sprintcore/tests
 ## 📌 Roadmap
 
 - [x] PRD to Stories CLI
-- [ ] Story clustering by similarity
-- [ ] Duplicate story detection
+- [x] Story clustering by similarity
+- [x] Duplicate story detection
+- [x] Create Jira story using natural language prompt
+- [x] Create Jira subtasks using natural language prompt
+- [x] Upload stories in bulk
 - [ ] Linear integration
 - [ ] Sprint planning agent
+- [ ] Automated story updates based on git commits
+- [ ] Automated story updates based on standup notes
+- [ ] Automated story updates based on standup voice recordings
+- [ ] Get info from Jira/Linear through natural language
 
 ---
 
 ## 📝 License
 
-MIT © [Your Name]
+MIT © Spicewood Labs LLC
