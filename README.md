@@ -75,20 +75,28 @@ pytest sprintcore/tests
 ## 📌 Roadmap
 
 - [x] PRD to Stories CLI
+- [x] Parse messy, unstructured PRDs (Google Docs, Notion, Markdown)
+- [x] Generate clean stories with subtasks, labels, estimates
 - [x] Story clustering by similarity
 - [x] Duplicate story detection
 - [x] Create Jira story using natural language prompt
 - [x] Create Jira subtasks using natural language prompt
 - [x] Upload stories in bulk
 - [ ] Linear integration
+- [ ] Slack integration
 - [ ] Sprint planning agent
-- [ ] Automated story updates based on git commits
+- [ ] Automated story updates based on git commits and PRs
 - [ ] Automated story updates based on standup notes
 - [ ] Automated story updates based on standup voice recordings
-- [ ] Get info from Jira/Linear through natural language
-
+- [ ] Get info from Jira/Linear using natural language
+- [ ] Create Jira Boards, Jira Sprints using natural language
+- [x] Capture standup notes (Slack, meetings) and update the right stories
+- [x] Auto-generate standup summaries based on team activity
+- [x] Maintain sprint health without manual intervention
+- [x] Flags stories that are missing key requirements and UI mocks
+- [x] Clarifies requirements from PM
 ---
 
 ## 📝 License
 
-MIT © Spicewood Labs LLC
+MIT © Spicewood Labs LLC.
