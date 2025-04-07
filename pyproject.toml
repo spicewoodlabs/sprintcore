@@ -2,7 +2,7 @@
 name = "sprintcore"
 version = "0.1.0"
 description = "SprintCore CLI: Convert PRDs into structured sprints"
-authors = [{ name = "Nishant Asthana", email = "nishant@sprintcore.ai" }]
+authors = [{ name = "Spicewood Labs LLC", email = "contact@sprintcore.ai" }]
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.8"
