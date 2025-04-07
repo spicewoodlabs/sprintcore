@@ -33,7 +33,7 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 ```bash
 git clone https://github.com/spicewoodlabs/sprintcore.git
 cd sprintcore
-pip install -e .
+pip install .
 ```
 
 ---
