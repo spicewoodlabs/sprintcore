@@ -17,7 +17,10 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 ---
 
 ## 💼 Paid Version (Coming Soon)
-
+- 🧭 Unstructured Slack Messages -> Structured Tasks in Jira/Linear
+- 📊 Unstructured Notes -> Structured Tasks in Jira/Linear
+- 🔁 Standup notes -> Story updates
+- 🔁 Git commit  -> Story point updates
 - 🧭 Full web dashboard with team access
 - 🔁 Story deduplication + clustering
 - 📊 Sprint velocity tracking
