@@ -37,7 +37,7 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 git clone https://github.com/spicewoodlabs/sprintcore.git
 cd sprintcore
 pip install .
-cp example/.env.example example/.env
+cp example/.env.example .env
 ```
 
 ---
