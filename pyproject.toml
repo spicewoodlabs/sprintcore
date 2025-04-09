@@ -1,6 +1,6 @@
 [project]
 name = "sprintcore"
-version = "0.1.0"
+version = "0.1.1"
 description = "SprintCore CLI: Convert PRDs into structured sprints"
 authors = [{ name = "Spicewood Labs LLC", email = "contact@sprintcore.ai" }]
 readme = "README.md"

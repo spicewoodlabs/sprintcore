@@ -37,9 +37,16 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 git clone https://github.com/spicewoodlabs/sprintcore.git
 cd sprintcore
 pip install .
+cp example/.env.example example/.env
 ```
 
 ---
+
+## 📦 Add OPENAI_API_KEY
+
+Add `OPENAI_API_KEY=sk_...` in `.env`
+
+--
 
 ## 🚀 Usage
 
