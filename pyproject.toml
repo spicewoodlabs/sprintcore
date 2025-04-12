@@ -1,7 +1,7 @@
 [project]
 name = "sprintcore"
-version = "0.1.1"
-description = "SprintCore CLI: Convert PRDs into structured sprints"
+version = "0.1.2"
+description = "SprintCore CLI: Convert PRDs into structured sprints. Fix bugs based on bug report"
 authors = [{ name = "Spicewood Labs LLC", email = "contact@sprintcore.ai" }]
 readme = "README.md"
 license = { text = "MIT" }
@@ -10,7 +10,19 @@ dependencies = [
   "openai",
   "python-dotenv",
   "pyyaml",
-  "requests"
+  "requests",
+  "langchain",
+  "langchain-openai",
+  "faiss-cpu"
+  "tqdm"
+  "PyYAML"
+  "rich"
+  "anthropic"
+  "tree-sitter==0.24.0"
+  "tree-sitter-javascript==0.23.1"
+  "tree-sitter-typescript==0.23.2"
+  "tiktoken==0.9.0"
+  "langchain-community"
 ]
 
 [project.scripts]

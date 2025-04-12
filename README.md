@@ -1,18 +1,27 @@
 # 🚀 SprintCore
 
-**SprintCore** is an AI-powered CLI tool that converts Product Requirement Documents (PRDs) into structured agile artifacts — Epics, Stories, and Subtasks — using AI.
+**SprintCore** is an AI-powered CLI tool that does a lot of things 
+
+1. Converts Product Requirement Documents (PRDs) into structured agile artifacts — Epics, Stories, and Subtasks — using AI.
+
+2. Suggest bug fixes based on your code using AI
 
 Built for Engineers, Product Managers, and Team Leads to speed up Sprint Planning.
 
 ---
 
-## 🛠 Features
-
+## 🛠 PRD -> Story 
 - 🧠 PRD → Epic/Story/Subtask generation via AI
 - 📤 Export to `.json`, `.yaml`, or `.md`
 - 🧪 Supports mock mode for local dev/testing
 - 🔌 Ready for Jira integration (Linear support coming soon)
 - ✨ Designed for extension (clustering, deduplication, planning, etc.)
+
+## 🛠 Bug Report -> Code 
+- 📤 Just describe your bug and AI will suggest the fix in seconds
+- 🧠 Index code base locally
+- 📤 Uses local vector DB
+- 🔌 Ready for Jira/Linear (Paid feature)
 
 ---
 
@@ -26,6 +35,7 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 - 📊 Sprint velocity tracking
 - 🔗 Deep integrations with Jira, Linear, GitHub
 - ✅ Priority support and model configuration
+- 🔁 Bugfix Jira/Linear integration
 
 👉 [Join the waitlist](https://sprintcore.ai)
 
@@ -34,10 +44,11 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/spicewoodlabs/sprintcore.git
-cd sprintcore
-pip install .
-cp example/.env.example example/.env
+$ pip install sprintcore
+
+$ cd sprintcore
+
+$ cp example/.env.example .env
 ```
 
 ---
@@ -47,38 +58,45 @@ cp example/.env.example example/.env
 Add `OPENAI_API_KEY=sk_...` in `.env`
 
 --
+## 📦 Add ANTHROPIC_API_KEY (for bug-fix agent)
 
-## 🚀 Usage
+Add `ANTHROPIC_API_KEY=sk_...` in `.env`
 
-### Basic
+--
 
-```bash
-sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt
-```
+## 🚀 Usage:: PRD -> Story 
 
-### With Mock Mode
 
 ```bash
-sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt --mock
+$ sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt
 ```
 
 ---
+## 🚀 Usage:: Bug Report -> Bug fix
 
-## 🔐 Environment Setup
 
-Create a `.env` file in the repo root:
+### Step 1: Index your codebase/git repo. 
+This is a one time step unless you add moee code. Run the following command from the root directory to index your repo. Pass the source code repo in the `--source` parameter. Make sure to not index `node_modules` or other directories. Provide the full path and not the relative path
 
-```env
-OPENAI_API_KEY=sk-...
-```
+#### NextJS
 
----
+`$ sprintcore index-code --lang nextjs --source-code /Users/myuser/code-examples/tsx/ [--index INDEX]`
 
-## 🧪 Run Tests
+#### Javascript
 
-```bash
-pytest sprintcore/tests
-```
+`$ sprintcore index-code --lang js --source-code /Users/myuser/code-examples/tsx/ [--index INDEX]`
+
+## Step 2: Query the index (Optional)
+Query the index to find top k matching documents 
+
+
+`$ sprintcore bug-fix --bug_description "post title is not appearing on the page" --mode query`
+
+
+### Step 3: Get code fix recommendations from AI
+
+
+`$ sprintcore bug-fix  --bug_description "post title is not appearing on the page" --mode fix_code`
 
 ---
 
