@@ -43,13 +43,13 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 
 ## 📦 Installation
 
-```bash
-$ pip install sprintcore
+`$ git clone https://github.com/spicewoodlabs/sprintcore.git`
 
-$ cd sprintcore
+`$ cd sprintcore`
 
-$ cp example/.env.example .env
-```
+`$ pip install sprintcore`
+
+`$ cp example/.env.example .env`
 
 ---
 
@@ -66,14 +66,10 @@ Add `ANTHROPIC_API_KEY=sk_...` in `.env`
 
 ## 🚀 Usage:: PRD -> Story 
 
-
-```bash
-$ sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt
-```
+`$ sprintcore create-story  --input sprintcore/examples/prd/prd-flight-booking.md --output stories.yaml --prompt prompt.txt`
 
 ---
 ## 🚀 Usage:: Bug Report -> Bug fix
-
 
 ### Step 1: Index your codebase/git repo. 
 This is a one time step unless you add moee code. Run the following command from the root directory to index your repo. Pass the source code repo in the `--source` parameter. Make sure to not index `node_modules` or other directories. Provide the full path and not the relative path
