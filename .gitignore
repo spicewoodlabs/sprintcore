@@ -46,3 +46,4 @@ sprintcore.egg-info/
 *.md
 *.json
 index
+publish-to-pypi.sh
