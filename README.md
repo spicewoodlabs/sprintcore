@@ -47,9 +47,11 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 
 `$ cd sprintcore`
 
+`$ cp sprintcore/example/.env.example .env`
+
 `$ pip install sprintcore`
 
-`$ cp example/.env.example .env`
+
 
 ---
 
