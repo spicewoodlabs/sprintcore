@@ -13,7 +13,7 @@ def main():
     load_dotenv(dotenv_path='.env', override=True)
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
     ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
-    print(f"OPENAI_API_KEY={OPENAI_API_KEY} ANTHROPIC_API_KEY={ANTHROPIC_API_KEY}")
+    
     required_keys = ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]
     missing_key = 0
     for key in required_keys:

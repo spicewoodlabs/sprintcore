@@ -44,6 +44,7 @@ dist/
 sprintcore.egg-info/
 *.yaml
 *.md
+!prd-flight-booking.md
 *.json
 index
 publish-to-pypi.sh
