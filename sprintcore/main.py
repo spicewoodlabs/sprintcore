@@ -9,16 +9,26 @@ from sprintcore.cli.fix_bugs_agent import fix_bug
 
 def main():
     env_path = find_dotenv()
-    load_dotenv(dotenv_path=env_path, override=True)
     
-    for var in ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]:
-        val = os.getenv(var)
+    load_dotenv(dotenv_path='.env', override=True)
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+    print(f"OPENAI_API_KEY={OPENAI_API_KEY} ANTHROPIC_API_KEY={ANTHROPIC_API_KEY}")
+    required_keys = ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"]
+    missing_key = 0
+    for key in required_keys:
+        if not os.getenv(key):
+            missing_key = 1
+            print(f"❌ {key} is missing")
+        else:
+            print(f"✅ {key} is loaded")
+
+    if (missing_key == 1): 
+        print("❌ One or more API keys are missing!")
+        print("You can copy .env.example to .env. API keys should be set in .env")
+        sys.exit(1)
+    
         
-        from_env = env_path and var in open(os.path.expanduser(env_path)).read()
-        source = ".env" if from_env else "shell"
-        if not from_env:
-            print(f"❌ {var} must be set in the .env file, but was loaded from the shell.")
-            sys.exit(1)
 
     parser = argparse.ArgumentParser(prog='sprintcore', description='SprintCore CLI - AI-powered sprint planning')
     subparsers = parser.add_subparsers(dest='command', required=True)
