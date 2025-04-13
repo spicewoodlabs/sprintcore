@@ -49,16 +49,33 @@ def print_claude_raw_response(response):
     console.print(Panel.fit(response, title="✅ Claude suggested fix: ", border_style="green"))
     
     
-def ask_claude_to_fix_nextjs_bug(bug_report, file_path, code_chunk, language="JavaScript/Typescript"):
+def ask_claude_to_fix_nextjs_bug(bug_report, file_path, code_chunk, stream_resp, language="JavaScript/Typescript"):
+    
     ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = generate_prompt(bug_report,file_path,code_chunk)
-    response = client.messages.create( model="claude-3-opus-20240229", max_tokens=1500, temperature=0.3, messages=[{"role": "user", "content": prompt}] ) 
-    response_text = response.content[0].text
-    
+    response_text = ""
+    if (stream_resp == "False"):
+        print("this is not a stream resp")
+        response = client.messages.create( model="claude-3-opus-20240229", max_tokens=1500, temperature=0.3, messages=[{"role": "user", "content": prompt}] ) 
+        response_text = response.content[0].text
+    else: 
+        print("this is  a stream resp")
+        with client.messages.stream(
+            model="claude-3-opus-20240229",  # or claude-3-sonnet / claude-3-haiku
+            max_tokens=1024,
+            temperature=0.7,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+        ) as stream:
+            for text in stream.text_stream:
+                print(text, end="", flush=True)
+                response_text = response_text + text
     return response_text
 
-def  fix_code_with_claude_and_print_diff(results, query_text, k):
+def  fix_code_with_claude_and_print_diff(results, query_text, k, stream_resp=False):
+    
     for i, doc in enumerate(results):
         meta = doc.metadata
         code = doc.page_content
@@ -68,7 +85,8 @@ def  fix_code_with_claude_and_print_diff(results, query_text, k):
 
         # Ask Claude to fix it
         print(f"\n🤖 Sending top result to Claude for bug fix suggestion...\n")
-        claude_response = ask_claude_to_fix_nextjs_bug(query_text, file_path, code)
+        
+        claude_response = ask_claude_to_fix_nextjs_bug(query_text, file_path, code,  stream_resp)
         console = Console()
         
         console.print(Panel.fit(claude_response, title="✅ Bug Fix", border_style="green"))
@@ -124,6 +142,7 @@ def fix_bug(args):
     query_text = bug_description
     mode=args.mode
     top_k = args.top_k
+    stream_resp = args.stream_resp
     
     db = load_index(index_dir)
     
@@ -137,9 +156,6 @@ def fix_bug(args):
         console = Console()
         
         with console.status("Going to fix the code now...\n", spinner="material"):
-            fix_code_with_claude_and_print_diff(results,query_text,top_k)
-    #for doc in results:
-    #   metadata = doc.metadata
-    #   src = metadata["source"]
-    #   print(f"src file: {src}]n")
+            fix_code_with_claude_and_print_diff(results,query_text,top_k, stream_resp)
+
     

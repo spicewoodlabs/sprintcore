@@ -51,6 +51,7 @@ def main():
     query_index_parser.add_argument('--bug_description', required=True, help='Description of the bug')
     query_index_parser.add_argument('--top_k', default=3, help='Top k similar matches')
     query_index_parser.add_argument('--mode', default='query', help='query to query the index; fix_code for fixing code')
+    query_index_parser.add_argument('--stream_resp', default='False', help='stream the response')
    
     
    
