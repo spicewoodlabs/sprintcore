@@ -54,15 +54,17 @@ def ask_claude_to_fix_nextjs_bug(bug_report, file_path, code_chunk, stream_resp,
     ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = generate_prompt(bug_report,file_path,code_chunk)
+    claude_model = "claude-3-7-sonnet-20250219"
+    print(f"using claude_model = {claude_model}")
     response_text = ""
     if (stream_resp == "False"):
-        print("this is not a stream resp")
-        response = client.messages.create( model="claude-3-opus-20240229", max_tokens=1500, temperature=0.3, messages=[{"role": "user", "content": prompt}] ) 
+        
+        response = client.messages.create( model=claude_model, max_tokens=1500, temperature=0.3, messages=[{"role": "user", "content": prompt}] ) 
         response_text = response.content[0].text
     else: 
-        print("this is  a stream resp")
+        
         with client.messages.stream(
-            model="claude-3-opus-20240229",  # or claude-3-sonnet / claude-3-haiku
+            model=claude_model,  # or claude-3-sonnet / claude-3-haiku
             max_tokens=1024,
             temperature=0.7,
             messages=[
@@ -137,7 +139,7 @@ def load_index(index_dir="index"):
 
 def fix_bug(args):
     index_dir="index"
-    
+    print("fix_bug")
     bug_description = args.bug_description
     query_text = bug_description
     mode=args.mode
