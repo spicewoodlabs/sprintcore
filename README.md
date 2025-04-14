@@ -9,6 +9,12 @@
 Built for Engineers, Product Managers, and Team Leads to speed up Sprint Planning.
 
 ---
+## 🛠 Bug Report -> Code 
+- 📤 Just describe your bug and AI will suggest the fix in seconds
+- 🧠 Index code base locally
+- 📤 Uses local vector DB
+- 🔌 Ready for Jira/Linear (Paid feature)
+![sprintcore-bug-fix-demo-3](https://github.com/user-attachments/assets/887f1687-626c-45ed-a6e8-82dbf9cef2bb)
 
 ## 🛠 PRD -> Story 
 - 🧠 PRD → Epic/Story/Subtask generation via AI
@@ -16,19 +22,7 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 - 🧪 Supports mock mode for local dev/testing
 - 🔌 Ready for Jira integration (Linear support coming soon)
 - ✨ Designed for extension (clustering, deduplication, planning, etc.)
-- ![Feature PrdToStoryGif](https://github.com/user-attachments/assets/2524054d-ded7-4e43-b5ee-812a50ac51c1)
-
-
-## 🛠 Bug Report -> Code 
-- 📤 Just describe your bug and AI will suggest the fix in seconds
-- 🧠 Index code base locally
-- 📤 Uses local vector DB
-- 🔌 Ready for Jira/Linear (Paid feature)
-![Feature BugFix2](https://github.com/user-attachments/assets/4631563d-404f-4925-8b0c-5459b38dcd85)
-
-- 
-
----
+![sprintcore-prd-demo-3](https://github.com/user-attachments/assets/e4edc106-25a9-4731-a283-b9ef84b56d64)
 
 ## 💼 Paid Version (Coming Soon)
 - 🧭 Unstructured Slack Messages -> Structured Tasks in Jira/Linear
@@ -43,7 +37,8 @@ Built for Engineers, Product Managers, and Team Leads to speed up Sprint Plannin
 - 🔁 Bugfix Jira/Linear integration
 
 👉 [Join the waitlist](https://sprintcore.ai)
-![Hero](https://github.com/user-attachments/assets/538d5b49-e2cd-4b52-b185-fda37ff52252)
+
+![My Projects - Targets](https://github.com/user-attachments/assets/a06b611d-74e2-4f22-9133-58fd79c2411f)
 
 
 ---
