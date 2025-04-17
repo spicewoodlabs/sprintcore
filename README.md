@@ -53,7 +53,7 @@ Add `ANTHROPIC_API_KEY=sk_...` in `.env`
 ## 🚀 Usage:: Bug Report -> Bug fix
 
 ### Step 1: Index your codebase/git repo. 
-This is a one time step unless you add moee code. Run the following command from the root directory to index your repo. Pass the source code repo in the `--source` parameter. Make sure to not index `node_modules` or other directories. Provide the full path and not the relative path
+This is a one time step unless you add more code. Run the following command from the root directory to index your repo. Pass the source code repo in the `--source` parameter. Make sure to not index `node_modules` or other directories. Provide the full path and not the relative path
 
 #### NextJS
 
