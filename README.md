@@ -9,20 +9,16 @@
 Built for Engineers, Product Managers, and Team Leads to speed up Sprint Planning.
 
 ---
-## 🛠 Jira Bug Report -> Code (For Eng)
+## 🛠 Fix NextJS/React/JS bugs
 - 📤 Just describe your bug and AI will suggest the fix in seconds
 - 🧠 Index code base locally
 - 📤 Uses local vector DB
-- 🔌 Ready for Jira/Linear (Paid feature)
-![sprintcore-bug-fix-demo-3](https://github.com/user-attachments/assets/887f1687-626c-45ed-a6e8-82dbf9cef2bb)
+
 
 ## 🛠 PRD -> Story (For PMs and Eng)
 - 🧠 PRD → Epic/Story/Subtask generation via AI
 - 📤 Export to `.json`, `.yaml`, or `.md`
 - 🧪 Supports mock mode for local dev/testing
-- 🔌 Ready for Jira integration (Linear support coming soon)
-- ✨ Designed for extension (clustering, deduplication, planning, etc.)
-![sprintcore-prd-demo-3](https://github.com/user-attachments/assets/e4edc106-25a9-4731-a283-b9ef84b56d64)
 
 ---
 
